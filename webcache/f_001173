@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="TWM1bkpQMjkfJEcqAgVgbzURUSwgYUdbeRZ4BQg0bWo/K3FfM2l5TQ==">
+    <title>Tasks</title>
+    <link href="/jquery.datetimepicker-2.4.1/jquery.datetimepicker.min.css" rel="stylesheet">
+<link href="/assets/9a15ccb2/css/bootstrap.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet"></head>
+<body>
+
+<div class="wrap">
+    <nav id="w1" class="navbar-inverse navbar-fixed-top navbar" role="navigation"><div class="container"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#w1-collapse"><span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span></button><a class="navbar-brand" href="/index.php">My Task Report</a></div><div id="w1-collapse" class="collapse navbar-collapse"><ul id="w2" class="navbar-nav navbar-right nav"><li><a href="/index.php?r=tasks&amp;fdate=2017-12-13">Tasks</a></li>
+<li><a href="/index.php?r=tasks%2Fdayreport&amp;date=2017-12-13">Report: Today</a></li>
+<li><a href="/index.php?r=tasks%2Fdayreport&amp;date=2017-12-12">Report: Yesterday</a></li>
+<li><a href="/index.php?r=tasks%2Ftomorrow">Plan: Tomorrow</a></li>
+<li><a href="/index.php?r=tasks%2Fattendance">Attendance</a></li>
+<li><a href="/index.php?r=globals">Globals</a></li></ul></div></div></nav>
+    <div class="container-fluid">
+        <ul class="breadcrumb"><li><a href="/index.php">Home</a></li>
+<li class="active">Tasks</li>
+</ul>        <div class="tasks-index">
+
+    <h1>Tasks</h1>
+
+    <p>
+        <a id="new-task" class="btn btn-success">Create Tasks</a>		
+    </p>
+    <div>
+        <strong>Filter : </strong>
+        <a class="btn btn-sm btn-primary" href="?r=tasks/index">All</a>        <a class="btn btn-sm btn-primary" href="?r=tasks/index&amp;fdate=2017-12-13">Today</a>        <a class="btn btn-sm btn-primary" href="?r=tasks/index&amp;fdate=2017-12-14">Tomorrow</a>        <a class="btn btn-sm btn-primary" href="?r=tasks/index&amp;fdate=2017-12-12">Yesterday</a>    </div>
+    <br/>
+    <div id="w0" class="grid-view"><div class="summary">Showing <b>1-20</b> of <b>421</b> items.</div>
+<table class="table table-striped table-bordered"><thead>
+<tr><th>#</th><th><a href="/index.php?r=tasks%2Findex&amp;sort=date" data-sort="date">Date</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=bug_no" data-sort="bug_no">Bug No</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=priority" data-sort="priority">Priority</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=estimated_hours" data-sort="estimated_hours">Estimated Hours</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=start_time" data-sort="start_time">Start Time</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=end_time" data-sort="end_time">End Time</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=hours_worked" data-sort="hours_worked">Hours Worked</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=project" data-sort="project">Project</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=module" data-sort="module">Module</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=work_details" data-sort="work_details">Work Details</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=status" data-sort="status">Status</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=position" data-sort="position">Position</a></th><th><a href="/index.php?r=tasks%2Findex&amp;sort=comments" data-sort="comments">Comments</a></th><th class="action-column">&nbsp;</th></tr>
+</thead>
+<tbody>
+<tr data-key="1"><td>1</td><td>2017-08-29</td><td>1461</td><td>high</td><td>04:00:00</td><td>09:30:00</td><td>11:00:00</td><td>01:15:00</td><td>Imedicor</td><td>Preauth</td><td>HOTFIX: Preauth: Bill Amount is empty and cannot be null</td><td>complete</td><td>2</td><td>1) Preauth: Bill Amount fixes for empty/null values <br />
+2) Fixes &amp; testing for version 2.19 &amp; 2.20</td><td><a href="/index.php?r=tasks%2Fview&amp;id=1" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=1"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=1" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="2"><td>2</td><td>2017-08-29</td><td></td><td>normal</td><td>00:15:00</td><td>09:30:00</td><td>09:45:00</td><td>00:15:00</td><td>Imedicor</td><td></td><td>Days plan, mail checking.</td><td>complete</td><td>1</td><td>Mail checking and task report to client</td><td><a href="/index.php?r=tasks%2Fview&amp;id=2" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=2"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=2" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="3"><td>3</td><td>2017-08-29</td><td>1397</td><td>normal</td><td>05:30:00</td><td>10:30:00</td><td>18:00:00</td><td>05:30:00</td><td>Imedicor</td><td>Dental Module</td><td>Custom Dental Procedure attributes updates</td><td>in_progress</td><td>3</td><td>1) Removed dental procedure query from Tooth model and moved to DentalProcedure model<br />
+2) Updated function replace: FROM $tooth_model-&gt;getDentalProcedure() TO $dentalprocedure_model-&gt;getDentalProcedureCode<br />
+3) Removed inline query from ajax/common.php file and added new function getCodeColors() in DentalProcedure model<br />
+4) Model fixes for custom dental procedure codes</td><td><a href="/index.php?r=tasks%2Fview&amp;id=3" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=3"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=3" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="4"><td>4</td><td>2017-08-29</td><td></td><td>normal</td><td><span class="not-set">(not set)</span></td><td>18:00:00</td><td>18:30:00</td><td>00:30:00</td><td>Imedicor</td><td></td><td>Version 2.20 discussion, Bug Requirements, SVN Checks and support with Team</td><td>complete</td><td>4</td><td>1) Updated about Dental Procedure feature<br />
+2) Discussed about version 2.20</td><td><a href="/index.php?r=tasks%2Fview&amp;id=4" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=4"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=4" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="5"><td>5</td><td>2017-08-29</td><td></td><td>high</td><td>00:30:00</td><td>18:45:00</td><td>19:15:00</td><td>00:30:00</td><td></td><td> Reporting / SVN Commit</td><td>Report Mail</td><td>complete</td><td>5</td><td>Today work report preparation</td><td><a href="/index.php?r=tasks%2Fview&amp;id=5" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=5"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=5" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="7"><td>6</td><td>2017-08-30</td><td></td><td>normal</td><td>00:15:00</td><td>09:15:00</td><td>10:00:00</td><td>00:45:00</td><td>Imedicor</td><td></td><td>Mail checking, SVN update and Task plan updates to client</td><td>complete</td><td>1</td><td>.</td><td><a href="/index.php?r=tasks%2Fview&amp;id=7" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=7"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=7" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="11"><td>7</td><td>2017-08-30</td><td>863</td><td>normal</td><td>00:00:00</td><td>11:00:00</td><td>11:15:00</td><td>00:15:00</td><td>Imedicor</td><td>Testing</td><td>Insurance: Normalize data testing</td><td>complete</td><td>2</td><td>1)This feature is hidden in current version<br />
+2)Tested on test3 server</td><td><a href="/index.php?r=tasks%2Fview&amp;id=11" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=11"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=11" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="12"><td>8</td><td>2017-08-30</td><td>1340</td><td>normal</td><td>00:00:00</td><td>11:15:00</td><td>11:45:00</td><td>00:30:00</td><td>Imedicor</td><td>Dental</td><td> Show ADA Codes when hovering over Quick Buttons</td><td>complete</td><td>3</td><td> - Quick button available modules:<br />
+    1) Admin &gt; Quick Buttons<br />
+    2) Schedule &gt; Add/Edit Event<br />
+    3) Dental &gt; Chart<br />
+ - Tested on test3 server</td><td><a href="/index.php?r=tasks%2Fview&amp;id=12" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=12"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=12" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="13"><td>9</td><td>2017-08-30</td><td>1359</td><td>normal</td><td>00:00:00</td><td>12:30:00</td><td>13:00:00</td><td>00:30:00</td><td>Imedicor</td><td>Dental</td><td>Dental Chart &gt; Procedures - Print testing</td><td>complete</td><td>5</td><td>1) Procedure print record testing for selected procedures</td><td><a href="/index.php?r=tasks%2Fview&amp;id=13" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=13"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=13" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="14"><td>10</td><td>2017-08-30</td><td>1365</td><td>normal</td><td>00:00:00</td><td>11:45:00</td><td>12:15:00</td><td>00:15:00</td><td>Imedicor</td><td>Admin &gt; Codes</td><td>Administrator &gt; Codes &gt; Add support to edit ADA codes </td><td>complete</td><td>4</td><td>1) Tested Codes DB data<br />
+2) Tested custom code</td><td><a href="/index.php?r=tasks%2Fview&amp;id=14" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=14"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=14" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="15"><td>11</td><td>2017-08-30</td><td>1419</td><td>normal</td><td>00:00:00</td><td>13:00:00</td><td>13:15:00</td><td>00:15:00</td><td>Imedicor</td><td>Admin &gt; Codes</td><td>Admin &gt; Codes &gt; ICD10 codes edit </td><td>complete</td><td>6</td><td> - Tested with Codes database `code`<br />
+ - Tested with Custom code</td><td><a href="/index.php?r=tasks%2Fview&amp;id=15" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=15"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=15" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="16"><td>12</td><td>2017-08-30</td><td>1392</td><td>normal</td><td>00:00:00</td><td>14:30:00</td><td>15:00:00</td><td>00:30:00</td><td>Imedicor</td><td>Ledger</td><td>Ledger: Height Rendering Issue</td><td>complete</td><td>7</td><td>Tested with below inputs<br />
+1) Added 6 patients<br />
+2) Added 32 records</td><td><a href="/index.php?r=tasks%2Fview&amp;id=16" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=16"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=16" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="17"><td>13</td><td>2017-08-30</td><td></td><td>normal</td><td>00:00:00</td><td>15:00:00</td><td>19:00:00</td><td>01:00:00</td><td>Imedicor</td><td>Discussion</td><td>Team discussion/support	</td><td>complete</td><td>20</td><td> - Version 2.20 discussion, Bug Requirements, SVN Checks and support with Team<br />
+ - Team discussion for spending more time on analysis and instructed to avoid more basic queries</td><td><a href="/index.php?r=tasks%2Fview&amp;id=17" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=17"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=17" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="18"><td>14</td><td>2017-08-30</td><td>1421</td><td>normal</td><td>00:00:00</td><td>15:30:00</td><td>15:45:00</td><td>00:15:00</td><td>Imedicor</td><td>Allergy</td><td>Allergy &gt; Needs to support ICD10 </td><td>complete</td><td>9</td><td>1) Codes database record testing<br />
+2) Custom code testing</td><td><a href="/index.php?r=tasks%2Fview&amp;id=18" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=18"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=18" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="19"><td>15</td><td>2017-08-30</td><td>1416</td><td>normal</td><td>00:00:00</td><td>15:45:00</td><td>16:15:00</td><td>00:30:00</td><td>Imedicor</td><td>Patient Portal</td><td>Refactor: Patient Portal fixes with testing</td><td>complete</td><td>10</td><td> - Added warning message If CCDA &amp; CCR reports are disabled<br />
+ - UI fixes<br />
+</td><td><a href="/index.php?r=tasks%2Fview&amp;id=19" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=19"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=19" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="20"><td>16</td><td>2017-08-30</td><td>1195</td><td>normal</td><td>00:00:00</td><td>10:00:00</td><td>11:00:00</td><td>01:00:00</td><td>Imedicor</td><td>iMedicorApp</td><td>iMedicorApp &gt; logging to syslog</td><td>complete</td><td>1</td><td>Tested with xrayVisionDCV software</td><td><a href="/index.php?r=tasks%2Fview&amp;id=20" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=20"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=20" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="21"><td>17</td><td>2017-08-30</td><td>1430</td><td>normal</td><td>00:00:00</td><td>16:15:00</td><td>16:30:00</td><td>00:15:00</td><td>Imedicor</td><td>Admin &gt; SMTP</td><td>Admin &gt; SMTP functionality needs a test button</td><td>complete</td><td>11</td><td>Successfully received the email from Test action.</td><td><a href="/index.php?r=tasks%2Fview&amp;id=21" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=21"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=21" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="22"><td>18</td><td>2017-08-30</td><td></td><td>normal</td><td>00:00:00</td><td>18:30:00</td><td>19:00:00</td><td>00:30:00</td><td>Imedicor</td><td>Report Mail</td><td>Report mail preparation</td><td>complete</td><td>21</td><td> - Updated task details in spreadsheet</td><td><a href="/index.php?r=tasks%2Fview&amp;id=22" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=22"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=22" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="23"><td>19</td><td>2017-08-30</td><td>1397</td><td>normal</td><td>00:00:00</td><td>18:00:00</td><td>18:30:00</td><td>00:30:00</td><td>Imedicor</td><td>Dental Procedure</td><td>Custom Dental Procedure attributes testing &amp; fixes</td><td>complete</td><td>13</td><td> -  DB auto increment fixes for custom_dental_procedures table</td><td><a href="/index.php?r=tasks%2Fview&amp;id=23" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=23"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=23" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+<tr data-key="24"><td>20</td><td>2017-08-30</td><td></td><td>normal</td><td>00:00:00</td><td>10:00:00</td><td>18:45:00</td><td>01:00:00</td><td>Imedicor</td><td>Testing</td><td>Application testing for all the modules</td><td>complete</td><td>14</td><td>.</td><td><a href="/index.php?r=tasks%2Fview&amp;id=24" title="View" aria-label="View" data-pjax="0"><span class="glyphicon glyphicon-eye-open"></span></a> <a class="update-btn" href="#" url="/index.php?r=tasks%2Fupdate&amp;id=24"><span class="glyphicon glyphicon-pencil"></span></a> <a href="/index.php?r=tasks%2Fdelete&amp;id=24" title="Delete" aria-label="Delete" data-confirm="Are you sure you want to delete this item?" data-method="post" data-pjax="0"><span class="glyphicon glyphicon-trash"></span></a></td></tr>
+</tbody></table>
+<ul class="pagination"><li class="prev disabled"><span>&laquo;</span></li>
+<li class="active"><a href="/index.php?r=tasks%2Findex&amp;page=1" data-page="0">1</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=2" data-page="1">2</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=3" data-page="2">3</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=4" data-page="3">4</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=5" data-page="4">5</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=6" data-page="5">6</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=7" data-page="6">7</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=8" data-page="7">8</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=9" data-page="8">9</a></li>
+<li><a href="/index.php?r=tasks%2Findex&amp;page=10" data-page="9">10</a></li>
+<li class="next"><a href="/index.php?r=tasks%2Findex&amp;page=2" data-page="1">&raquo;</a></li></ul></div>    </div>
+    <div class="modal fade" id="modal" style="width:100%;" role="dialog" aria-labelledby="modalLabel" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog" role="document" style="width:1200px;">
+            <div class="modal-content" style="width:100%;" >
+            </div>
+        </div>
+    </div>
+    </div>
+    
+<style type="text/css">
+    .field-tasks-estimated_hours,
+    .field-tasks-hours_worked,
+    .field-tasks-adj_time,
+    .field-tasks-end_time,
+    .field-tasks-start_time{
+        float:left;
+        width:19%;
+    }
+
+    .field-tasks-position,
+    .field-tasks-date,
+    .field-tasks-bug_no,
+    .field-tasks-priority,
+    .field-tasks-project,
+    .field-tasks-module,
+    .field-tasks-status{
+        float:left;
+        width:24%;
+    }
+    .field-tasks-priority, .field-tasks-work_details, .field-tasks-estimated_hours{clear:both;}
+    .xdsoft_time.xdsoft_disabled{display:none;}
+	.field-tasks-checkin label{width: 85px;text-align: right;color: red;}
+	.field-tasks-checkin input{width: 5px !important;float: left;}
+</style>    </div>
+</div>
+
+<footer class="footer">
+    <div class="container-fluid">
+        <p class="pull-left">&copy; My Company 2017</p>
+
+        <p class="pull-right">Powered by <a href="http://www.yiiframework.com/" rel="external">Yii Framework</a></p>
+    </div>
+</footer>
+
+<div id="yii-debug-toolbar" data-url="/index.php?r=debug%2Fdefault%2Ftoolbar&amp;tag=5a3120c037ec4" style="display:none" class="yii-debug-toolbar-bottom"></div><style>
+#yii-debug-toolbar-logo {
+    position: fixed;
+    right: 31px;
+    bottom: 4px;
+}
+
+.yii-debug-toolbar {
+    font: 11px Verdana, Arial, sans-serif;
+    text-align: left;
+    width: 96px;
+    height: 42px;
+    transition: width .3s ease;
+    z-index: 1000000;
+}
+
+.yii-debug-toolbar_active {
+    width: 100%;
+    height: auto;
+}
+
+.yii-debug-toolbar_position_top {
+    margin: 0 0 20px 0;
+    width: 100%;
+}
+
+.yii-debug-toolbar_position_bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+.yii-debug-toolbar__bar {
+    position: relative;
+    padding: 0;
+    font: 11px Verdana, Arial, sans-serif;
+    text-align: left;
+    height: 40px;
+    overflow: hidden;
+
+    background: rgb(255, 255, 255);
+    background: -moz-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(247, 247, 247) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgb(255, 255, 255) 0%, rgb(247, 247, 247) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgb(255, 255, 255) 0%, rgb(247, 247, 247) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f7f7f7', GradientType=0); /* IE6-9 */
+
+    border: 1px solid rgba(0, 0, 0, 0.11);
+
+    /* ensure debug toolbar text is displayed ltr even on rtl pages */
+    direction: ltr;
+}
+
+.yii-debug-toolbar__bar:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.yii-debug-toolbar__view {
+    height: 0;
+    overflow: hidden;
+    background: white;
+    transition: height .3s ease;
+}
+
+.yii-debug-toolbar__view iframe {
+    margin: 0;
+    padding: 0;
+    padding-top: 10px;
+    height: 100%;
+    width: 100%;
+    border: 0;
+}
+
+.yii-debug-toolbar_iframe_active .yii-debug-toolbar__view {
+    height: 100%;
+}
+
+.yii-debug-toolbar__block {
+    float: left;
+    margin: 0;
+    border-right: 1px solid rgba(0, 0, 0, 0.11);
+    padding: 4px 8px;
+    line-height: 32px;
+    white-space: nowrap;
+}
+
+.yii-debug-toolbar__block_active {
+    background: rgb(247, 247, 247); /* Old browsers */
+    background: -moz-linear-gradient(top, rgb(247, 247, 247) 0%, rgb(224, 224, 224) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgb(247, 247, 247) 0%, rgb(224, 224, 224) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgb(247, 247, 247) 0%, rgb(224, 224, 224) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e0e0e0', GradientType=0); /* IE6-9 */
+}
+
+.yii-debug-toolbar__block a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+.yii-debug-toolbar__block img {
+    vertical-align: middle;
+}
+
+.yii-debug-toolbar__label {
+    display: inline-block;
+    padding: 2px 4px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 14px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    color: #ffffff;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    background-color: #999999;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+
+.yii-debug-toolbar__label:empty {
+    display: none;
+}
+
+a.yii-debug-toolbar__label:hover,
+a.yii-debug-toolbar__label:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.yii-debug-toolbar__label_important {
+    background-color: #b94a48;
+}
+
+.yii-debug-toolbar__label_important[href] {
+    background-color: #953b39;
+}
+
+.yii-debug-toolbar__label_warning,
+.yii-debug-toolbar__badge_warning {
+    background-color: #f89406;
+}
+
+.yii-debug-toolbar__label_warning[href] {
+    background-color: #c67605;
+}
+
+.yii-debug-toolbar__label_success {
+    background-color: #468847;
+}
+
+.yii-debug-toolbar__label_success[href] {
+    background-color: #356635;
+}
+
+.yii-debug-toolbar__label_info {
+    background-color: #3a87ad;
+}
+
+.yii-debug-toolbar__label_info[href] {
+    background-color: #2d6987;
+}
+
+.yii-debug-toolbar__label_inverse,
+.yii-debug-toolbar__badge_inverse {
+    background-color: #333333;
+}
+
+.yii-debug-toolbar__label_inverse[href],
+.yii-debug-toolbar__badge_inverse[href] {
+    background-color: #1a1a1a;
+}
+
+.yii-debug-toolbar__title {
+    background: rgb(247, 247, 247); /* Old browsers */
+    background: -moz-linear-gradient(top, rgb(247, 247, 247) 0%, rgb(224, 224, 224) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgb(247, 247, 247) 0%, rgb(224, 224, 224) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgb(247, 247, 247) 0%, rgb(224, 224, 224) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#e0e0e0', GradientType=0); /* IE6-9 */
+}
+
+.yii-debug-toolbar__toggle,
+.yii-debug-toolbar__external {
+    cursor: pointer;
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 28px;
+    color: #ffffff;
+    text-align: center;
+
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+
+    transition: opacity .3s ease;
+}
+
+.yii-debug-toolbar__toggle:hover,
+.yii-debug-toolbar__toggle:focus,
+.yii-debug-toolbar__external:hover,
+.yii-debug-toolbar__external:focus {
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.9;
+    filter: alpha(opacity=90);
+}
+
+.yii-debug-toolbar__toggle-icon,
+.yii-debug-toolbar__external-icon {
+    display: inline-block;
+
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.yii-debug-toolbar__toggle {
+    right: 10px;
+    top: 4px;
+}
+
+.yii-debug-toolbar__toggle-icon {
+    padding: 7px 0;
+    width: 10px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMTUuNTYzIDQwLjgzNmEuOTk3Ljk5NyAwIDAgMCAxLjQxNCAwbDE1LTE1YTEgMSAwIDAgMCAwLTEuNDE0bC0xNS0xNWExIDEgMCAwIDAtMS40MTQgMS40MTRMMjkuODU2IDI1LjEzIDE1LjU2MyAzOS40MmExIDEgMCAwIDAgMCAxLjQxNHoiLz48L3N2Zz4=');
+    transition: -webkit-transform .3s ease-out;
+    transition: transform .3s ease-out;
+}
+
+.yii-debug-toolbar_active .yii-debug-toolbar__toggle-icon {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.yii-debug-toolbar_iframe_active .yii-debug-toolbar__toggle-icon {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.yii-debug-toolbar__external {
+    display: none;
+    right: 50px;
+    top: 4px;
+}
+
+.yii-debug-toolbar_iframe_active .yii-debug-toolbar__external {
+    display: block;
+}
+
+.yii-debug-toolbar__external-icon {
+    padding: 8px 0;
+    width: 14px;
+    height: 14px;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBmaWxsPSIjNDQ0IiBkPSJNMzkuNjQyIDkuNzIyYTEuMDEgMS4wMSAwIDAgMC0uMzgyLS4wNzdIMjguMTAzYTEgMSAwIDAgMCAwIDJoOC43NDNMMjEuNyAyNi43OWExIDEgMCAwIDAgMS40MTQgMS40MTVMMzguMjYgMTMuMDZ2OC43NDNhMSAxIDAgMCAwIDIgMFYxMC42NDZhMS4wMDUgMS4wMDUgMCAwIDAtLjYxOC0uOTI0eiIvPjxwYXRoIGQ9Ik0zOS4yNiAyNy45ODVhMSAxIDAgMCAwLTEgMXYxMC42NmgtMjh2LTI4aDEwLjY4M2ExIDEgMCAwIDAgMC0ySDkuMjZhMSAxIDAgMCAwLTEgMXYzMGExIDEgMCAwIDAgMSAxaDMwYTEgMSAwIDAgMCAxLTF2LTExLjY2YTEgMSAwIDAgMC0xLTF6Ii8+PC9zdmc+');
+}
+</style><script>(function () {
+    'use strict';
+
+    var findToolbar = function () {
+            return document.querySelector('#yii-debug-toolbar');
+        },
+        ajax = function (url, settings) {
+            var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+            settings = settings || {};
+            xhr.open(settings.method || 'GET', url, true);
+            xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            xhr.setRequestHeader('Accept', 'text/html');
+            xhr.onreadystatechange = function (state) {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 && settings.success) {
+                        settings.success(xhr);
+                    } else if (xhr.status != 200 && settings.error) {
+                        settings.error(xhr);
+                    }
+                }
+            };
+            xhr.send(settings.data || '');
+        },
+        url,
+        div,
+        toolbarEl = findToolbar(),
+        barSelector = '.yii-debug-toolbar__bar',
+        viewSelector = '.yii-debug-toolbar__view',
+        blockSelector = '.yii-debug-toolbar__block',
+        toggleSelector = '.yii-debug-toolbar__toggle',
+        externalSelector = '.yii-debug-toolbar__external',
+
+        CACHE_KEY = 'yii-debug-toolbar',
+        ACTIVE_STATE = 'active',
+
+        activeClass = 'yii-debug-toolbar_active',
+        iframeActiveClass = 'yii-debug-toolbar_iframe_active',
+        titleClass = 'yii-debug-toolbar__title',
+        blockClass = 'yii-debug-toolbar__block',
+        blockActiveClass = 'yii-debug-toolbar__block_active';
+
+    if (toolbarEl) {
+        url = toolbarEl.getAttribute('data-url');
+
+        ajax(url, {
+            success: function (xhr) {
+                div = document.createElement('div');
+                div.innerHTML = xhr.responseText;
+
+                toolbarEl.parentNode.replaceChild(div, toolbarEl);
+
+                showToolbar(findToolbar());
+            },
+            error: function (xhr) {
+                toolbarEl.innerHTML = xhr.responseText;
+            }
+        });
+    }
+
+    function showToolbar(toolbarEl) {
+        var barEl = toolbarEl.querySelector(barSelector),
+            viewEl = toolbarEl.querySelector(viewSelector),
+            toggleEl = toolbarEl.querySelector(toggleSelector),
+            externalEl = toolbarEl.querySelector(externalSelector),
+            blockEls = barEl.querySelectorAll(blockSelector),
+            iframeEl = viewEl.querySelector('iframe'),
+            iframeHeight = function () {
+                return (window.innerHeight * 0.7) + 'px';
+            },
+            isIframeActive = function () {
+                return toolbarEl.classList.contains(iframeActiveClass);
+            },
+            showIframe = function (href) {
+                toolbarEl.classList.add(iframeActiveClass);
+
+                iframeEl.src = externalEl.href = href;
+                viewEl.style.height = iframeHeight();
+            },
+            hideIframe = function () {
+                toolbarEl.classList.remove(iframeActiveClass);
+                removeActiveBlocksCls();
+
+                externalEl.href = '#';
+                viewEl.style.height = '';
+            },
+            removeActiveBlocksCls = function () {
+                [].forEach.call(blockEls, function (el) {
+                    el.classList.remove(blockActiveClass);
+                });
+            },
+            toggleToolbarClass = function (className) {
+                if (toolbarEl.classList.contains(className)) {
+                    toolbarEl.classList.remove(className);
+                } else {
+                    toolbarEl.classList.add(className);
+                }
+            },
+            toggleStorageState = function (key, value) {
+                if (window.localStorage) {
+                    var item = localStorage.getItem(key);
+
+                    if (item) {
+                        localStorage.removeItem(key);
+                    } else {
+                        localStorage.setItem(key, value);
+                    }
+                }
+            },
+            restoreStorageState = function (key) {
+                if (window.localStorage) {
+                    return localStorage.getItem(key);
+                }
+            },
+            togglePosition = function () {
+                if (isIframeActive()) {
+                    hideIframe();
+                } else {
+                    toggleToolbarClass(activeClass);
+                    toggleStorageState(CACHE_KEY, ACTIVE_STATE);
+                }
+            };
+
+        toolbarEl.style.display = 'block';
+
+        if (restoreStorageState(CACHE_KEY) == ACTIVE_STATE) {
+            toolbarEl.classList.add(activeClass);
+        }
+
+        window.onresize = function () {
+            if (toolbarEl.classList.contains(iframeActiveClass)) {
+                viewEl.style.height = iframeHeight();
+            }
+        };
+
+        barEl.onclick = function (e) {
+            var target = e.target,
+                block = findAncestor(target, blockClass);
+
+            if (block && !block.classList.contains(titleClass)) {
+                while (target !== this) {
+                    if (target.href) {
+                        removeActiveBlocksCls();
+                        block.classList.add(blockActiveClass);
+                        showIframe(target.href);
+                    }
+                    target = target.parentNode;
+                }
+
+                e.preventDefault();
+            }
+        };
+
+        toggleEl.onclick = togglePosition;
+    }
+
+    function findAncestor(el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
+    }
+})();
+</script><script src="/assets/61f97504/jquery.js"></script>
+<script src="/assets/70c7d39d/yii.js"></script>
+<script src="/assets/70c7d39d/yii.gridView.js"></script>
+<script src="/jquery.datetimepicker-2.4.1/jquery.datetimepicker.min.js"></script>
+<script src="/assets/9a15ccb2/js/bootstrap.js"></script>
+<script type="text/javascript">jQuery(document).ready(function () {
+jQuery('#w0').yiiGridView({"filterUrl":"\/","filterSelector":"#w0-filters input, #w0-filters select"});
+
+	$(document).ready(function(){
+		
+	$("body").on("hidden.bs.modal", ".modal", function () {
+                    $(this).removeData("bs.modal");
+                });
+				
+	$(document).on("click","#new-task",function(e){
+        $("#modal").modal({
+            remote: "?r=tasks/create"
+        });
+    }); 
+	
+	$(document).on("click", ".update-btn", function (e) {
+		$("#modal").modal({
+            remote: $(this).attr("url")
+        });
+	});
+	
+	$("#modal").on("loaded.bs.modal", function (e) {
+		var adj_time = $("#tasks-adj_time").val();
+		if(adj_time==""){adj_time = "00:00";}
+		
+		var start_time = $("#tasks-start_time").val();
+		if(start_time==""){
+			start_time = "00:00";
+		}
+		
+		var end_time = $("#tasks-end_time").val();
+		if(end_time==""){end_time = "00:00";}
+		
+		var hours_worked = $("#tasks-hours_worked").val();
+		if(hours_worked==""){hours_worked = "00:00";}
+		
+		var estimated_hours = $("#tasks-estimated_hours").val();
+		if(estimated_hours==""){estimated_hours = "00:00";}
+		
+		$( "#tasks-date" ).datetimepicker({format:"Y-m-d",timepicker:false,closeOnDateSelect:true});
+		$( "#tasks-adj_time" ).datetimepicker({format:"H:i",datepicker:false,step:15,minTime:"00:00",maxTime:"03:00", value:adj_time,validateOnBlur:false});
+		$( "#tasks-start_time" ).datetimepicker({format:"H:i",datepicker:false,step:15,minTime:"9:00", value:start_time,validateOnBlur:false});
+		$( "#tasks-end_time" ).datetimepicker({format:"H:i",datepicker:false,step:15,minTime:"9:00", value:end_time,validateOnBlur:false});
+		$( "#tasks-hours_worked" ).datetimepicker({format:"H:i",datepicker:false,step:15, value:hours_worked,validateOnBlur:false});
+		$( "#tasks-estimated_hours" ).datetimepicker({format:"H:i",datepicker:false,step:15, value:estimated_hours,validateOnBlur:false});
+		
+		$("#tasks-start_time, #tasks-end_time, #tasks-adj_time").on("change", function(){
+			TimeDifference();
+		});
+		$(".xdsoft_datetimepicker").trigger("afterOpen.xdsoft"); 
+
+	});
+	
+       $(document).on("click", ".btn-new, .btn-edit", function (e) {
+		    $(".form-group").removeClass("has-error");
+			$(".help-block").empty();
+            var form = $("#tasks-form");
+            // submit form
+            $.ajax({
+            url    : form.attr("action"),
+            type   : "POST",
+			dataType: "JSON",
+            data   : form.serialize(),
+            success: function (response) 
+            {
+				if(Object.keys(response).length>0){
+					$.each(response, function(index, value){
+						$(".field-tasks-"+index).addClass("has-error");
+						$(".field-tasks-"+index+" .help-block").html(value[0]);
+						//console.log(index, value);
+					});
+				}else{
+					$("#modal").modal("toggle");
+                     location.reload();
+				}
+            },
+            error  : function () 
+            {
+                
+            }
+            });
+            return false;
+         });
+				
+	
+	function TimeDifference(){
+
+	var first= $( "#tasks-end_time" ).val().split(":")
+    var second = $( "#tasks-start_time" ).val().split(":")    
+	var adj = $( "#tasks-adj_time" ).val().split(":");
+	var newTime = TimeDiff(first, second).split(":");
+	console.log(newTime, adj);
+	TimeDiff(newTime, adj);
+	
+	}
+function TimeDiff(first, second)
+{
+	
+        
+        var xx;
+        var yy;
+        
+        if(parseInt(first[0]) < parseInt(second[0])){          
+            
+            if(parseInt(first[1]) < parseInt(second[1])){
+                
+                yy = parseInt(first[1]) + 60 - parseInt(second[1]);
+                xx = parseInt(first[0]) + 24 - 1 - parseInt(second[0])
+            
+            }else{
+              yy = parseInt(first[1]) - parseInt(second[1]);
+              xx = parseInt(first[0]) + 24 - parseInt(second[0])
+            }
+           
+        
+        
+        }else if(parseInt(first[0]) == parseInt(second[0])){
+        
+          if(parseInt(first[1]) < parseInt(second[1])){
+                
+                yy = parseInt(first[1]) + 60 - parseInt(second[1]);
+                xx = parseInt(first[0]) + 24 - 1 - parseInt(second[0])
+            
+            }else{
+              yy = parseInt(first[1]) - parseInt(second[1]);
+              xx = parseInt(first[0]) - parseInt(second[0])
+            }
+        
+        }else{
+            
+            
+          if(parseInt(first[1]) < parseInt(second[1])){
+                
+                yy = parseInt(first[1]) + 60 - parseInt(second[1]);
+                xx = parseInt(first[0]) - 1 - parseInt(second[0])
+            
+            }else{
+              yy = parseInt(first[1]) - parseInt(second[1]);
+              xx = parseInt(first[0]) - parseInt(second[0])
+            }
+        
+        
+        }    
+ 
+    if(xx < 10)
+        xx = "0" + xx
+        
+    
+    if(yy < 10)
+        yy = "0" + yy
+	if(!$.isNumeric(xx)){
+		xx="00";
+	}
+	if(!$.isNumeric(yy)){
+		yy="00";
+	}
+	$( "#tasks-hours_worked" ).val(xx + ":" + yy);
+    return xx + ":" + yy;  
+}
+
+	});
+	
+});</script></body>
+</html>

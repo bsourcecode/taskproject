@@ -1,0 +1,30 @@
+DROP TABLE IF EXISTS `z_dailytask`.`tasks`;
+CREATE TABLE  `z_dailytask`.`tasks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `bug_no` varchar(45) DEFAULT NULL,
+  `priority` varchar(20) NOT NULL DEFAULT '',
+  `estimated_hours` time DEFAULT NULL,
+  `start_time` time DEFAULT NULL,
+  `end_time` time DEFAULT NULL,
+  `adj_time` time NOT NULL DEFAULT '00:00:00',
+  `hours_worked` time DEFAULT NULL,
+  `project` varchar(45) DEFAULT NULL,
+  `module` varchar(45) DEFAULT NULL,
+  `work_details` text NOT NULL,
+  `status` varchar(45) NOT NULL DEFAULT '',
+  `comments` longtext,
+  `checkin` int(11) NOT NULL DEFAULT '0',
+  `position` int(11) NOT NULL DEFAULT '1',
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+DROP TABLE IF EXISTS `z_dailytask`.`globals`;
+CREATE TABLE  `z_dailytask`.`globals` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `value` varchar(45) NOT NULL DEFAULT '',
+  `name` varchar(45) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
