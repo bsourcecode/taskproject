@@ -1,1 +1,1 @@
-This code will give you the option for handling your daily task report.
+This code will give you the option of handling your daily task report.
