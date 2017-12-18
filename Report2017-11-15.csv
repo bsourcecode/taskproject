@@ -1,9 +1,0 @@
-Date*,"Bug / Card / Issue No.*",Priority,"Start Time","End Time","Project *","Module Name / Task Name *","Work Details *","Hrs Worked *","Status *","Comments *"
-11/15/2017,,Normal,09:20,09:35,Imedicor,,"Mail checking, SVN updates and Task details updates to Client",00:15,Completed,
-11/15/2017,1568,Normal,09:40,13:00,Imedicor,"Insurance Carrier","Insurance carrier `Quick Add` button placed in Insurance Add/Edit page, and Custom Form Insurance",03:00,Completed,
-11/15/2017,1323,Normal,13:00,13:30,Imedicor,"Insurance Report","Discussion with Ganesh regarding insurance (PPO) payment process and difficulties on that While calculating amount for report",00:15,Completed,
-11/15/2017,1476,High,14:30,18:15,Imedicor,"MU Report: Objectives","MU objective measures re-analyze and testing",03:30,Completed,
-11/15/2017,,Normal,11:00,18:45,Imedicor,,"General discussion regarding migration, bug updates and requirement",00:15,Completed,
-11/15/2017,1475,Normal,18:15,19:15,Imedicor,"MU Report: CQM","CQM measure analyze with Cypress system. 
-Prepared Cypress system for testing.",01:00,Completed,
-11/15/2017,,Normal,19:15,19:25,Imedicor,,"Day-end report preparation",00:10,Completed,
