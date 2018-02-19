@@ -42,6 +42,7 @@ class Tasks extends \yii\db\ActiveRecord
         return [
             [['date', 'work_details', 'start_time', 'end_time', 'status', 'priority', 'position'], 'required'],
             [['date', 'estimated_hours', 'start_time', 'end_time', 'hours_worked', 'adj_time', 'created', 'modified'], 'safe'],
+			[['hours_number'], 'number'],
             [['work_details', 'comments'], 'string'],
 			[['position', 'checkin'], 'integer'],
             [['bug_no', 'project', 'module', 'status'], 'string', 'max' => 45],
@@ -75,6 +76,7 @@ public function beforeSave($insert)
             'start_time' => 'Start Time',
             'end_time' => 'End Time',
             'hours_worked' => 'Hours Worked',
+			'hours_number' => 'Hours In Number',
 			'adj_time' => 'Adj Time',
             'project' => 'Project',
             'module' => 'Module',

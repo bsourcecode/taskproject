@@ -39,6 +39,8 @@ use yii\jui;
     <?= $form->field($model, 'adj_time')->textInput(['style' => 'width:90%;']) ?>
 
     <?= $form->field($model, 'hours_worked')->textInput(['style' => 'width:90%;']) ?>
+	
+	<?= $form->field($model, 'hours_number')->textInput(['type' => 'number', 'style' => 'width:90%;']) ?>
 
     <?= $form->field($model, 'work_details')->textarea(['rows' => 6]) ?>
 

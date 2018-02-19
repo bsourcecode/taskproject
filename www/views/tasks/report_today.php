@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 
-$this->title = date("Y-m-d")==$_GET['date']?'Today Report':date("d-M-Y", strtotime($_GET['date'])).' Report';
+$this->title = 'Today Report';
 $this->params['breadcrumbs'][] = $this->title;
 $heading = array(
     'Date*',
@@ -26,7 +26,7 @@ function seconds($time)
 
 ?>
 <div class="container-fluid tasks-report">
-    <h2><?= Html::encode($this->title) ?></h2>
+    <h1><?= Html::encode($this->title) ?></h1>
     <div>
         <input type="button" value="Copy" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('mailContent'));">
         <?= Html::a('Download', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/dayreport&csv=1&date='.$_GET['date'], ['class' => 'btn btn-sm btn-primary']); ?>
@@ -77,8 +77,7 @@ foreach ($dataProvider->models as $model) {
                     <!--<td><?php echo $model->project; ?></td>-->
                     <td><?php echo $model->module; ?></td>
                     <td><?php echo $model->work_details; ?></td>
-                    <td><?php
-                    echo date("H:i", strtotime($model->hours_worked));
+                    <td><?php echo $model->hours_number;
                     $total_hrs+=seconds($model->hours_worked);
 
                     ?></td>

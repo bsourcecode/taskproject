@@ -237,7 +237,7 @@ class TasksController extends Controller
                 $model->project,
                 $model->module,
                 $model->work_details,
-                date("H:i", strtotime($model->hours_worked)),
+                $model->hours_number,
                 $this->statusList[$model->status],
                 $model->comments,
             ));

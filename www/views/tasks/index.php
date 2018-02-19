@@ -54,6 +54,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'start_time',
             'end_time',
             'hours_worked',
+			'hours_number',
             'project',
             'module',
             'work_details:ntext',
@@ -256,9 +257,10 @@ function TimeDiff(first, second)
     .field-tasks-hours_worked,
     .field-tasks-adj_time,
     .field-tasks-end_time,
-    .field-tasks-start_time{
+    .field-tasks-start_time, 
+	.field-tasks-hours_number{
         float:left;
-        width:19%;
+        width:15%;
     }
 
     .field-tasks-position,
