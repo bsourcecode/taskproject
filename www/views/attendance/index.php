@@ -23,13 +23,20 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'date',
             'checkin',
             'checkout',
-            'created',
+			[
+				'label' => 'Gross Time',
+				'value' => function ($model) {
+					$datetime1 = date_create($model->checkout);
+					$datetime2 = date_create($model->checkin);
+					$interval = date_diff($datetime1, $datetime2);
+					return $interval->format('%h hr %i mins');
+					return $model->checkin;
+				}
+			],
+            //'created',
             // 'modified',
 
             ['class' => 'yii\grid\ActionColumn'],

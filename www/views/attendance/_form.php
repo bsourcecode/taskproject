@@ -18,10 +18,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'checkout')->textInput() ?>
 
-    <?= $form->field($model, 'created')->textInput() ?>
-
-    <?= $form->field($model, 'modified')->textInput() ?>
-
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
@@ -29,3 +25,16 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
+<?php
+    $this->registerCssFile("@web/jquery.datetimepicker-2.4.1/jquery.datetimepicker.min.css");
+    $this->registerJsFile("@web/jquery.datetimepicker-2.4.1/jquery.datetimepicker.min.js", ['depends' => [yii\web\JqueryAsset::className()]]);
+    $this->registerJs(
+        '
+	$(document).ready(function(){
+		$( "#attendance-date" ).datetimepicker({format:"Y-m-d",timepicker:false,closeOnDateSelect:true});
+		$( "#attendance-checkin" ).datetimepicker({format:"H:i",datepicker:false,step:1,minTime:"00:00",validateOnBlur:true});
+		$( "#attendance-checkout" ).datetimepicker({format:"H:i",datepicker:false,step:1,minTime:"00:00",validateOnBlur:false});
+	});
+	');
+?>

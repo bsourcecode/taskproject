@@ -32,3 +32,15 @@ CREATE TABLE  `z_dailytask`.`globals` (
 
 -- 19 February 2018
 ALTER TABLE `tasks` ADD `hours_number` DECIMAL(4,2) NOT NULL DEFAULT '0.00' AFTER `hours_worked`; 
+
+-- 01 March 2018
+DROP TABLE IF EXISTS `z_dailytask`.`attendance`;
+CREATE TABLE  `z_dailytask`.`attendance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` date NOT NULL,
+  `checkin` time NOT NULL DEFAULT '00:00:00',
+  `checkout` time NOT NULL DEFAULT '00:00:00',
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;

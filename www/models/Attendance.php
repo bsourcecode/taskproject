@@ -30,9 +30,22 @@ class Attendance extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['date', 'created', 'modified'], 'required'],
+            [['date'], 'required'],
             [['date', 'checkin', 'checkout', 'created', 'modified'], 'safe'],
         ];
+    }
+	
+	public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if(!$this->id){
+				$this->created=date("Y-m-d H:i:s");
+			}
+			$this->modified=date("Y-m-d H:i:s");
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

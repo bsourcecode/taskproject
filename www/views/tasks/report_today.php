@@ -78,7 +78,7 @@ foreach ($dataProvider->models as $model) {
                     <td><?php echo $model->module; ?></td>
                     <td><?php echo $model->work_details; ?></td>
                     <td><?php echo $model->hours_number;
-                    $total_hrs+=seconds($model->hours_worked);
+                    $total_hrs+=$model->hours_number;
 
                     ?></td>
                     <td><?php echo $statusList[$model->status]; ?></td>
@@ -94,7 +94,7 @@ foreach ($dataProvider->models as $model) {
             <td></td>
             <!--<td></td>-->
             <td><strong>Total Hrs</strong></td>
-            <td><strong><?php echo gmdate("H:i", $total_hrs); ?></strong></td>
+            <td><strong><?php echo number_format($total_hrs,2); ?></strong></td>
             <td></td>
             <td></td>
         </table>
