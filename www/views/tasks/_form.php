@@ -28,7 +28,7 @@ use yii\jui;
 
     <?= $form->field($model, 'project')->dropDownList($projectList, ['style' => 'width:90%;']) ?>
 
-    <?= $form->field($model, 'module')->textInput(['style' => 'width:90%;']) ?>
+    <?= $form->field($model, 'module')->dropDownList($model->getAction(),['style' => 'width:90%;']) ?>
 
     <?= $form->field($model, 'estimated_hours')->textInput(['style' => 'width:90%;']) ?>
 

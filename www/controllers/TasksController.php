@@ -213,32 +213,22 @@ class TasksController extends Controller
 
         $handle = fopen('php://output', 'w');
         $heading = array(
-            'Date*',
-            'Bug No.*',
-            'Priority',
-            'Start Time',
-            'End Time',
-            'Project *',
-            'Module Name / Task Name *',
-            'Work Details *',
-            'Hrs Worked *',
-            'Status *',
-            'Comments *',
+            'Date',
+			'Hours',
+            'Bug',
+            'Action',
+            'Task',
+            'Comments',
         );
         fputcsv($handle, $heading);
         
-        foreach ($dataProvider->models as $model) {
+        foreach ($dataProvider->models as $index => $model) {
             fputcsv($handle, array(
-                date("m/d/Y", strtotime($model->date)),
+                $index==0?date("m/d/Y", strtotime($model->date)):'',
+				$model->hours_number,
                 $model->bug_no,
-                $this->priorityList[$model->priority],
-                date("H:i", strtotime($model->start_time)),
-                date("H:i", strtotime($model->end_time)),
-                $model->project,
                 $model->module,
                 $model->work_details,
-                $model->hours_number,
-                $this->statusList[$model->status],
                 $model->comments,
             ));
         }

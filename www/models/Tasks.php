@@ -79,7 +79,7 @@ public function beforeSave($insert)
 			'hours_number' => 'Hours In Number',
 			'adj_time' => 'Adj Time',
             'project' => 'Project',
-            'module' => 'Module',
+            'module' => 'Module/Action',
             'work_details' => 'Work Details',
             'status' => 'Status',
             'comments' => 'Comments',
@@ -89,4 +89,14 @@ public function beforeSave($insert)
             'modified' => 'Modified',
         ];
     }
+	
+	public function getAction(){
+		return array(
+			'Develop'=>'Develop',
+			'Test'=>'Test',
+			'Review'=>'Review',
+			'Assist'=>'Assist',
+			'Overhead'=>'Overhead',
+		);
+	}
 }
