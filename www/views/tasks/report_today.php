@@ -30,6 +30,7 @@ function seconds($time)
     <div>
 		<?= Html::a('Create Tasks', null, ['class' => 'btn btn-success', 'id' => 'new-task']) ?>		
         <input type="button" value="Copy" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('mailContent'));">
+		<input type="button" value="Copy 2" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('shortreport'));">
         <?= Html::a('Download', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/dayreport&csv=1&date='.$_GET['date'], ['class' => 'btn btn-sm btn-primary']); ?>
 		<?= Html::a('Edit', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/index&fdate=' . $_GET['date'], ['class' => 'btn btn-sm btn-danger']) ?>
     </div>
@@ -335,3 +336,28 @@ function goTaskReportItems(date){
 	window.location.href="<?php echo Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks&fdate=';?>"+date;
 }
 </script>
+
+
+
+
+
+
+
+
+<!--- NEW --->
+<br/><br/><br/>
+    <div id="shortreport">
+        <table style="width:100%;">           
+<?php
+$total_hrs = 0;
+$count = 0;
+foreach ($dataProvider->models as $model) {
+
+    ?> 
+                <tr> 
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $model->bug_no?$model->bug_no.' ':''; ?><?php echo nl2br($model->comments)==''?$model->work_details:nl2br($model->comments); ?></td>
+				</tr>  
+<?php } ?>	
+                                  
+        </table>
+    </div>
