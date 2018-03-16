@@ -111,6 +111,18 @@ class TasksController extends Controller
             ]);
         }
     }
+	
+    public function actionCopy($id)
+    {
+        $exist = $this->findModel($id);
+		$data = $exist->attributes;
+		
+		$model = new Tasks();
+		$model->setAttributes($data);
+        $model->date = date("Y-m-d H:i:s");
+		$model->save();
+		echo 1;
+    }
 
     /**
      * Updates an existing Tasks model.

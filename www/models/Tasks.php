@@ -97,6 +97,7 @@ public function beforeSave($insert)
 			'Review'=>'Review',
 			'Assist'=>'Assist',
 			'Overhead'=>'Overhead',
+			'Migration'=>'Migration',
 		);
 	}
 }

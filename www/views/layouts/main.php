@@ -52,7 +52,7 @@ AppAsset::register($this);
             ['label' => 'Report: Today', 'url' => ['/tasks/dayreport','date'=>date("Y-m-d")]],
             ['label' => 'Report: Yesterday', 'url' => ['/tasks/dayreport','date'=>date("Y-m-d", strtotime(date("Y-m-d ") . " -1 day"))]],
             ['label' => 'Plan: Tomorrow', 'url' => ['/tasks/tomorrow']],
-			['label' => 'Attendance', 'url' => ['/attendance']],
+			['label' => 'Attendance', 'url' => ['/attendance', 'sort'=>'-date']],
             ['label' => 'Globals', 'url' => ['/globals']]
         ],
     ]);

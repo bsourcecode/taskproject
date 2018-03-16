@@ -63,6 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'comments:ntext',
             [
                 'class' => 'yii\grid\ActionColumn',
+				'template' => '{view} {update} {delete} {copyButton}',
                 'buttons' => [
                     'update' => function ($url, $model) {
                         return Html::a('<span class="glyphicon glyphicon-pencil"></span>', "#", [
@@ -70,6 +71,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'url' => $url
                         ]);
                     },
+					'copyButton' => function($url, $model, $key) {     // render your custom button
+						return '<a data-id="'.$model->id.'" href="#" class="copytask" title="Copy"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span></a>';
+					}
                     ],
                 ],
             ],
@@ -137,6 +141,18 @@ $this->params['breadcrumbs'][] = $this->title;
 		});
 		$(".xdsoft_datetimepicker").trigger("afterOpen.xdsoft"); 
 
+	});
+	
+	
+	$(document).on("click", ".copytask", function (e) {
+		$.ajax({
+			url:"index.php?r=tasks/copy&id="+$(this).data("id"),
+			success:function(data){
+				if(data==1){
+					alert("Task copied");
+				}
+			}
+		});
 	});
 	
        $(document).on("click", ".btn-new, .btn-edit", function (e) {
