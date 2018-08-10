@@ -96,13 +96,15 @@ class DetailView extends Widget
      * Since Version 2.0.10, the tokens `{captionOptions}` and `{contentOptions}` are available, which will represent
      * HTML attributes of HTML container elements for the label and value.
      */
-    public $template = '<tr><th{captionOptions}>{label}</th><td{contentOptions}>{value}</td></tr>';
+    //public $template = '<tr><th{captionOptions}>{label}</th><td{contentOptions}>{value}</td></tr>';
+	
+	public $template = '<tr><th{captionOptions}>{label}</th></tr><tr><td{contentOptions}>{value}</td></tr>';
     /**
      * @var array the HTML attributes for the container tag of this widget. The `tag` option specifies
      * what container tag should be used. It defaults to `table` if not set.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
-    public $options = ['class' => 'table table-striped table-bordered detail-view'];
+    public $options = ['class' => 'table detail-view'];
     /**
      * @var array|Formatter the formatter used to format model attribute values into displayable texts.
      * This can be either an instance of [[Formatter]] or an configuration array for creating the [[Formatter]]

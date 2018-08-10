@@ -378,6 +378,14 @@ class Formatter extends Component
         }
         return str_replace('<p></p>', '', '<p>' . preg_replace('/\R{2,}/u', "</p>\n<p>", Html::encode($value)) . '</p>');
     }
+	
+	public function asPre($value)
+    {
+        if ($value === null) {
+            return $this->nullDisplay;
+        }
+        return str_replace('<pre></pre>', '', '<pre>' . preg_replace('/\R{2,}/u', "</p>\n<p>", Html::encode($value)) . '</pre>');
+    }
 
     /**
      * Formats the value as HTML text.

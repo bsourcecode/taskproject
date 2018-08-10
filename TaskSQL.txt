@@ -44,3 +44,31 @@ CREATE TABLE  `z_dailytask`.`attendance` (
   `modified` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+
+ALTER TABLE `attendance` ADD `checkin2` TIME NOT NULL DEFAULT '00:00:00 ' AFTER `checkout`, ADD `checkout2` TIME NOT NULL DEFAULT '00:00:00 ' AFTER `checkin2`; 
+ALTER TABLE `attendance` ADD `delay_hours` TIME NOT NULL DEFAULT '00:00:00' AFTER `checkout2`; 
+
+
+--
+-- Table structure for table `api`
+--
+
+
+DROP TABLE IF EXISTS `z_dailytask`.`api`;
+CREATE TABLE  `z_dailytask`.`api` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(250) NOT NULL,
+  `description` text,
+  `url` text NOT NULL,
+  `formats` enum('xml','json') NOT NULL,
+  `http_method` enum('GET','POST','DELETE') NOT NULL,
+  `parameters` text,
+  `prerequisites` text,
+  `notes` text,
+  `sample_request` text,
+  `sample_response` text,
+  `error_response` text,
+  `position` int(11) NOT NULL DEFAULT '150',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;

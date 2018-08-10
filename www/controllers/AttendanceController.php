@@ -43,6 +43,17 @@ class AttendanceController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+	
+	public function actionCalendar()
+    {
+        $searchModel = new AttendanceSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('calendar', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
 
     /**
      * Displays a single Attendance model.

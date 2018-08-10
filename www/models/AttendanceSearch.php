@@ -19,7 +19,7 @@ class AttendanceSearch extends Attendance
     {
         return [
             [['id'], 'integer'],
-            [['date', 'checkin', 'checkout', 'created', 'modified'], 'safe'],
+            [['date'], 'safe'],
         ];
     }
 
@@ -57,15 +57,8 @@ class AttendanceSearch extends Attendance
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id' => $this->id,
-            'date' => $this->date,
-            'checkin' => $this->checkin,
-            'checkout' => $this->checkout,
-            'created' => $this->created,
-            'modified' => $this->modified,
-        ]);
+        // grid filtering conditions		
+		$query->andFilterWhere(['like', 'date', $this->date]);
 
         return $dataProvider;
     }

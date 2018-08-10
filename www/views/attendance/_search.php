@@ -22,6 +22,10 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'checkin') ?>
 
     <?= $form->field($model, 'checkout') ?>
+	
+	<?= $form->field($model, 'checkin2') ?>
+
+    <?= $form->field($model, 'checkout2') ?>
 
     <?= $form->field($model, 'created') ?>
 
