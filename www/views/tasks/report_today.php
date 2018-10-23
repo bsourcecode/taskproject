@@ -32,6 +32,7 @@ function seconds($time)
         <input type="button" value="Copy" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('mailContent'));">
 		<input type="button" value="Copy 2" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('shortreport'));">
         <?= Html::a('Download', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/dayreport&csv=1&date='.$_GET['date'], ['class' => 'btn btn-sm btn-primary']); ?>
+		<?= Html::a('Download Full', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/dayreport&csv=1&full=1&date='.$_GET['date'], ['class' => 'btn btn-sm btn-primary']); ?>
 		<?= Html::a('Edit', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/index&fdate=' . $_GET['date'], ['class' => 'btn btn-sm btn-danger']) ?>
     </div>
     <br/>

@@ -192,7 +192,9 @@ class TasksController extends Controller
             'query' => Tasks::find()->where(['date' => $date])->orderBy(['position' => 0])
         ]);
 
-        if (isset($_GET['csv'])) {
+        if (isset($_GET['csv']) && isset($_GET['full'])) {
+            $this->download1($dataProvider, $date);
+        }else if (isset($_GET['csv'])) {
             $this->download($dataProvider, $date);
         } else {
             return $this->render('report_today', [
@@ -242,6 +244,48 @@ class TasksController extends Controller
                 $model->module,
                 $model->work_details,
                 $model->comments,
+            ));
+        }
+        
+        fclose($handle);
+        exit;
+    }
+
+    public function download1($dataProvider, $date)
+    {        header("Content-type: application/csv");
+        header("Content-Disposition: attachment; filename=\"Report".$date.".csv\"");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+
+        $handle = fopen('php://output', 'w');
+        $heading = array(
+            'Date',
+			'Bug',
+			'Priority',
+			'Start Time',
+			'End Time',
+			'Project',			
+			'Module Name',
+            'Task',
+			'Hours',
+			'Status',
+            'Comments',
+        );
+        fputcsv($handle, $heading);
+        
+        foreach ($dataProvider->models as $index => $model) {
+            fputcsv($handle, array(
+                $index==0?date("m/d/Y", strtotime($model->date)):'',
+				$model->bug_no,
+				$this->priorityList[$model->priority],
+				$model->start_time,
+				$model->end_time,
+				$model->project,
+                '',
+                $model->work_details,
+				$model->hours_number,
+				$this->statusList[$model->status],
+                ' '.$model->comments,
             ));
         }
         

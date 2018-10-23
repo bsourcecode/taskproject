@@ -1,0 +1,6 @@
+Date,Hours,Bug,Action,Task,Comments
+09/22/2018,0.25,,Overhead,"Mail Checking, SVN updates & Morning Discussion",
+,5.50,3019,Develop,"ICD10 code updates - (2019) - OCT 2018 Update","- Completed ICD10 updates for next siblings, prev siblings with extension code
+- Inserted new codes in testing server
+- Added codes in devboard"
+,0.25,,Overhead,"Day-end reporting",
