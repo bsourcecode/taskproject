@@ -27,7 +27,7 @@ function seconds($time)
 ?>
 <div class="container-fluid tasks-report">
     <h1><?= Html::encode($this->title) ?></h1>
-    <div>
+    <div style="float:left;">
 		<?= Html::a('Create Tasks', null, ['class' => 'btn btn-success', 'id' => 'new-task']) ?>		
         <input type="button" value="Copy" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('mailContent'));">
 		<input type="button" value="Copy 2" class="btn btn-sm btn-primary" onclick="selectElementContents(document.getElementById('shortreport'));">
@@ -35,6 +35,18 @@ function seconds($time)
 		<?= Html::a('Download Full', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/dayreport&csv=1&full=1&date='.$_GET['date'], ['class' => 'btn btn-sm btn-primary']); ?>
 		<?= Html::a('Edit', Yii::$app->getUrlManager()->getBaseUrl() . '?r=tasks/index&fdate=' . $_GET['date'], ['class' => 'btn btn-sm btn-danger']) ?>
     </div>
+	<div style="float:right;font-weight:bold;margin-bottom:25px;">
+		<table>
+			<tr>
+			<th>This Month&nbsp;:&nbsp;</th>
+			<td><?php echo $this_month;?> hrs</td>
+			<th>&nbsp;&nbsp;&nbsp;Last Month&nbsp;:&nbsp;</th>
+			<td><?php echo $last_month;?> hrs</td>
+			<th>&nbsp;&nbsp;&nbsp;Before Last Month&nbsp;:&nbsp;</th>
+			<td><?php echo $before_month;?> hrs</td>
+			</tr>
+		</table>
+	</div>
     <br/>
     <div id="mailContent">
         <table style="width:100%;">

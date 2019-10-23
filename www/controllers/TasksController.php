@@ -201,6 +201,9 @@ class TasksController extends Controller
                     'dataProvider' => $dataProvider,
                     'statusList' => $this->statusList,
                     'priorityList' => $this->priorityList,
+					'this_month' => $this->TotalHours(0),
+					'last_month' => $this->TotalHours(1),
+					'before_month' => $this->TotalHours(2),
             ]);
         }
     }
@@ -216,6 +219,19 @@ class TasksController extends Controller
                 'statusList' => $this->statusList,
                 'priorityList' => $this->priorityList,
         ]);
+    }
+
+    public function TotalHours($month = 0)
+    {
+		$start_date = date("Y-m-01", strtotime(date("Y-m-d") . " - ". $month." month"));
+		$end_date = date("Y-m-t", strtotime(date("Y-m-d") . " - ". $month." month"));
+		$result = Tasks::find()->select('SUM(hours_number) as hours_number')->where(['between', 'date', $start_date, $end_date])->all();
+		if($result){
+			foreach($result as $res){
+				return $res->hours_number;
+			}
+		}
+		return 0;
     }
 
     public function download($dataProvider, $date)
